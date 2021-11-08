@@ -21,6 +21,36 @@
         
         <!-- Button trigger modal -->
         <div style="text-align: left;">
+        <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#search-modal" data-source="Search Instructor">Fuzzy Search</button>
+        </div>
+        <div class="modal fade" id="search-modal" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Label">Search</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="pet-form-display">Instructor</span>
+                    <input type="text" class="form-control-0" aria-label="ptype" aria-describedby="basic-addon1">
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button href="localhost/search" id="search" type="button" class="btn btn-primary">Search</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-bottom: 10px;">    
+        
+        <!-- Button trigger modal -->
+        <div style="text-align: left;">
         <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#search-instructor-modal" data-source="Search Instructor">Search Instructor History</button>
         </div>
         <div class="modal fade" id="search-instructor-modal" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
@@ -51,7 +81,7 @@
         
         <!-- Button trigger modal -->
         <div style="text-align: left;">
-        <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#search-course-modal" data-source="Search Course">Search Course</button>
+        <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#search-course-modal" data-source="Search Course">Search Course History</button>
         </div>
         <div class="modal fade" id="search-course-modal" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
         <div class="modal-dialog">

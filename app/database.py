@@ -121,3 +121,26 @@ def search_instructor(instructor_name):
         todo_list.append(item)
     
     return todo_list
+
+def search(Instructor):
+    """Reads all tasks listed in the todo table
+
+    Returns:
+        A list of dictionaries
+    """
+
+    conn = db.connect()
+    query = 'Select * from Rating where Instructor LIKE "%%{}%%";'.format(Instructor)
+    print("==================================================")
+    print(query)
+    query_results = conn.execute(query).fetchall()
+    conn.close()
+    todo_list = []
+    for result in query_results:
+        item = {
+            "Instructor": result[0],
+            "Rating": result[1]
+        }
+        todo_list.append(item)
+    
+    return todo_list

@@ -48,6 +48,24 @@ $(document).ready(function () {
         });
     });
 
+    $('#search').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '/search',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify({
+                'Instructor': $('#search-modal').find('.form-control-0').val()
+            }),
+            success: function (res) {
+                console.log(res.response)
+                location.href = "search"  
+            },
+            error: function () {
+                console.log('Error');
+            }
+        });
+    });
+
     $('#submit-insert').click(function () {
         console.log($('#insert-modal').find('.form-control-0').val());
         $.ajax({

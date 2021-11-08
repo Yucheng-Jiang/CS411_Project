@@ -63,3 +63,13 @@ def search_course():
         return render_template("course.html", items=items)
     except:
         return render_template("course.html", items=items)
+
+@app.route("/search", methods=['POST','GET'])
+def search():
+    data = request.get_json()
+    global items
+    try:
+        items = db_helper.search(data['Instructor'])
+        return render_template("index.html", items=items)
+    except:
+        return render_template("index.html", items=items)
