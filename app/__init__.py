@@ -4,7 +4,6 @@ import sqlalchemy
 from yaml import load, Loader
 from flask import Flask, jsonify, render_template
 import mysql.connector as mysql
-import csv
 
 def init_connect_engine():
     if os.environ.get('GAE_ENV') != 'standard':
@@ -26,17 +25,6 @@ def init_connect_engine():
 db = init_connect_engine()
 connection = db.connect()
 metadata = sqlalchemy.MetaData()
-
-"""
-csv_data = csv.reader(open('rating.csv'))
-next(csv_data)
-query = 'INSERT INTO Rating VALUES'
-for row in csv_data:
-    query += '("{}", {},"{}"),'.format(row[0], int(row[1]), row[2])
-query = query[:-1]
-query += ";"
-connection.execute(query)
-"""
 print(connection)
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
