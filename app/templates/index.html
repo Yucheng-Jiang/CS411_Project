@@ -47,6 +47,37 @@
         </div>
     </div>
 
+
+    <div class="container" style="padding-bottom: 10px;">    
+        
+        <!-- Button trigger modal -->
+        <div style="text-align: left;">
+        <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#search-ge-modal" data-source="Search Instructor">Search GE</button>
+        </div>
+        <div class="modal fade" id="search-ge-modal" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Label">Search General Education Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="pet-form-display">GE type</span>
+                    <input type="text" class="form-control-0" aria-label="ptype" aria-describedby="basic-addon1">
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button href="localhost/ge.html" id="search-ge" type="button" class="btn btn-primary">Search</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <div class="container" style="padding-bottom: 10px;">    
         
         <!-- Button trigger modal -->
@@ -157,6 +188,7 @@
         <tr>
             <th class="instructor">Instructor</th>
             <th class="rating">Rating</th>
+            <th class="tag">Tag</th>
             <th class="edit">Edit</th>
             <th class="delete">Delete</th>
         </tr>
@@ -167,6 +199,7 @@
             <tr>
                 <td>{{item.Instructor}}</td>
                 <td>{{item.Rating}}</td>
+                <td>{{item.Tag}}</td>
                 <td><button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#edit-modal" data-source="{{item.Instructor}}""><i class="fa fa-pen fa-1" aria-hidden="true"></i></button>
                     <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
                     <div class="modal-dialog">

@@ -73,3 +73,13 @@ def search():
         return render_template("index.html", items=items)
     except:
         return render_template("index.html", items=items)
+
+@app.route("/search_ge", methods=['POST','GET'])
+def search_ge():
+    data = request.get_json()
+    try:
+        global items
+        items = db_helper.searchGE(data['ge_type'])
+        return render_template("ge.html", items=items)
+    except:
+        return render_template("ge.html", items=items)

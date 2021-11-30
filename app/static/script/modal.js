@@ -48,6 +48,24 @@ $(document).ready(function () {
         });
     });
 
+    $('#search-ge').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '/search_ge',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify({
+                'ge_type': $('#search-ge-modal').find('.form-control-0').val()
+            }),
+            success: function (res) {
+                console.log(res.response)
+                location.href = "search_ge"
+            },
+            error: function () {
+                console.log('Error');
+            }
+        });
+    });
+
     $('#search').click(function () {
         $.ajax({
             type: 'POST',

@@ -15,7 +15,8 @@ def fetch_todo() -> dict:
     for result in query_results:
         item = {
             "Instructor": result[0],
-            "Rating": result[1]
+            "Rating": result[1],
+            "Tag": result[2]
         }
         todo_list.append(item)
     
@@ -23,7 +24,6 @@ def fetch_todo() -> dict:
 
 
 def update(instructor_name, rating, pwd):
-    print(f'here at line 26, received {instructor_name}, {rating}, {pwd}')
     if pwd != "root":
         return False
     conn = db.connect()
@@ -44,7 +44,7 @@ def insert(instructor_name, rating,pwd):
     if pwd != "root":
         return False
     conn = db.connect()
-    query = 'Insert Ignore Into Rating VALUES ("{}", {});'.format(
+    query = 'Insert Ignore Into Rating VALUES ("{}", {}, "placeholder");'.format(
         instructor_name, rating)
     conn.execute(query)
     conn.close()
@@ -131,8 +131,6 @@ def search(Instructor):
 
     conn = db.connect()
     query = 'Select * from Rating where Instructor LIKE "%%{}%%";'.format(Instructor)
-    print("==================================================")
-    print(query)
     query_results = conn.execute(query).fetchall()
     conn.close()
     todo_list = []
@@ -140,6 +138,27 @@ def search(Instructor):
         item = {
             "Instructor": result[0],
             "Rating": result[1]
+        }
+        todo_list.append(item)
+    
+    return todo_list
+
+def searchGE(ge_type):
+    conn = db.connect()
+    query = 'CALL result("{}");'.format(ge_type)
+
+    query_results = conn.execute(query).fetchall()
+
+    conn.close()
+    todo_list = []
+    for result in query_results:
+        item = {
+            "Subject": result[0],
+            "Number": str(result[1]),
+            "AVG_GPA":str(result[2]),
+            "AVG_GRADE": str(result[3]),
+            "Description":result[4],
+            "Credit":str(result[5])
         }
         todo_list.append(item)
     
