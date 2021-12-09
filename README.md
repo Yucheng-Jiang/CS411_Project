@@ -1,5 +1,5 @@
-# A Todo List demo App
-This is a todo list demo designed for CS411. 
+# Customized Grade Disparity
+This is final project for CS411. 
 # Tutorial
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sY1lLGe7ECA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -12,7 +12,7 @@ python >= 3.5
 
 ## Getting started
 ```bash
-git clone https://github.com/a2975667/flask-gcp-mysql-demo.git
+git clone https://github.com/Yucheng-Jiang/cs411_project.git
 cd flask-gcp-mysql-demo
 python -m venv .venv
 source .venv/bin/activate
